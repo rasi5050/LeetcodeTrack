@@ -19,22 +19,20 @@ class Solution:
 #         return head2
 
         #approach2: reverse direction(from leetcode discussion)
-        prev=None
-        cur=head
-        while cur:
-            next=cur.next
-            cur.next=prev
-            prev=cur
-            cur=next
-        return prev
+        # prev=None
+        # cur=head
+        # while cur:
+        #     next=cur.next
+        #     cur.next=prev
+        #     prev=cur
+        #     cur=next
+        # return prev
         #approach3: reverse direction iterative changed to recursive(neetcode youtube comments:https://www.youtube.com/watch?v=G0_I-ZF0S38)
         
-        # prev=None
-        # def reverseLl(prev,head):
-        #     if not head: return prev
-        #     while head:
-        #         next=head.next
-        #         head.next=prev
-        #         return reverseLl(head,next)
-        # return reverseLl(prev,head)
+        def reverseLl(prev,head):
+            if not head: return prev
+            next=head.next
+            head.next=prev
+            return reverseLl(head,next)
+        return reverseLl(None,head)
         
