@@ -35,4 +35,6 @@ class Solution:
             head.next=prev
             return reverseLl(head,next)
         return reverseLl(None,head)
+    
+        #status: correct
         
