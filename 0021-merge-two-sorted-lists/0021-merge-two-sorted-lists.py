@@ -21,6 +21,9 @@ class Solution:
             temp.next=list1
         return head.next
     
+    #status: correct
+    #ref:11/12/2022P2:track1-cpGrind75;3QuestionPerDay(perQuestion-x3pomo),perDay-x10pomo;35hoursperWeek;15hrPerTopic+15hrPerTopic+5hrBuffer;Day37/38:do,1.mergeTwoSortedListTimed25Mins-x1pomo(10:00-10:30),8.implement-x2pomo(10:30-11:30)=x3pomo(18:00-19:30)
+    
             
                 
         
