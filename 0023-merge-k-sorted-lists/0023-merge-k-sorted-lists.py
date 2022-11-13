@@ -20,7 +20,7 @@ class Solution:
             if l2:temp.next=l2
             return head.next
 
-        if len(lists)==0:
+        if not lists:
             return None
         while len(lists)>1:
             mergedList=[]
