@@ -5,6 +5,7 @@
 #         self.next = next
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        #intuition: merge in pairs;help from neetcode youtube solution(https://www.youtube.com/watch?v=q5a5OiGbT6Q)
         def mergeList(l1,l2):
             temp=head=ListNode()
             while l1 and l2:
@@ -18,8 +19,8 @@ class Solution:
             if l1:temp.next=l1
             if l2:temp.next=l2
             return head.next
-        #intuition: merge in pairs;help from neetcode youtube solution(https://www.youtube.com/watch?v=q5a5OiGbT6Q)
-        if len(lists)==0 or not lists:
+
+        if len(lists)==0:
             return None
         while len(lists)>1:
             mergedList=[]
