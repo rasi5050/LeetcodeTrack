@@ -1,37 +1,40 @@
+from collections import deque
 class MyQueue:
-    
+
     def __init__(self):
-        self.enqueue_stack = []
-        self.dequeue_stack = []
-    
-    # enqueue
+        self.q1=[]
+        self.qTemp=[]
+
     def push(self, x: int) -> None:
-        self.enqueue_stack.append(x)
-        
-    # dequeue
+        self.q1.append(x)
+
     def pop(self) -> int:
-        # if items from dequeue stack are over refill it from enqueue stack
-        if not self.dequeue_stack:
-            self.fill()
-            
-        # otherwise pop items from dequeue stack
-        return self.dequeue_stack.pop()
+        while self.q1:
+            self.qTemp.append(self.q1.pop())
+        tempVar=self.qTemp.pop()
+        while self.qTemp:
+            self.q1.append(self.qTemp.pop())
+        return tempVar
 
     def peek(self) -> int:
-        if not self.dequeue_stack:
-            self.fill()
+        while self.q1:
+            self.qTemp.append(self.q1.pop())
+        tempVar=self.qTemp.pop()
+        self.q1.append(tempVar)
+        while self.qTemp:
+            self.q1.append(self.qTemp.pop())
+        return tempVar
 
-        # we could use dequeue_stack[-1] operation but this is not valid
-        # according to the details of this problem
-        temp = self.dequeue_stack.pop()
-        self.dequeue_stack.append(temp)
-        return temp
-    
     def empty(self) -> bool:
-        return not len(self.dequeue_stack) and not len(self.enqueue_stack)
+        return True if len(self.q1)==0 else False
+    #analysis time O(nk)=O(n), n: no of elements, k=number of operations, since peek and pop take k=2 each.
+    #space: O(2n)=(n)
     
-    # get items from enqueue to dequeue stack so we could pop items with 0(1) time
     
-    def fill(self):
-        while self.enqueue_stack:
-            self.dequeue_stack.append(self.enqueue_stack.pop())
+    
+# Your MyQueue object will be instantiated and called as such:
+# obj = MyQueue()
+# obj.push(x)
+# param_2 = obj.pop()
+# param_3 = obj.peek()
+# param_4 = obj.empty()
