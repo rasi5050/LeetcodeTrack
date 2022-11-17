@@ -7,17 +7,13 @@ class Solution:
         i=j=0
         
         while j<len(s):
-            if s[j] not in subString:
-                subString.append(s[j])
-                
-            else:
+            if s[j] in subString:
                 while subString[0]!=s[j]:
                     subString.popleft()
                     i+=1
-                subString.append(s[j])
                 subString.popleft()
                 i+=1
+            subString.append(s[j])
             j+=1
-            counter=max(counter, j-i)
-            
+            counter=max(counter, j-i)   
         return counter
