@@ -34,6 +34,5 @@ class Solution:
                 i=max(i,map[s[j]])
             map[s[j]]=j+1
             j+=1
-            # print(map, i, j)
             counter=max(counter, j-i)   
         return counter
