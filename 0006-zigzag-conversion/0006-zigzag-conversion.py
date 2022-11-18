@@ -1,16 +1,16 @@
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
-        #intuition: oscilatting pointer 
+        #intuition: oscilatting pointer,append to corresponding string while oscilating  
         rows= ["" for i in range(numRows)]
         oscilate=0
         index=0
         while index<len(s):
-            while oscilate<numRows and index<len(s):
+            while oscilate<numRows and index<len(s):  #down
                 rows[oscilate]+=(s[index])    #time O(1), because string append of 1 char
                 oscilate+=1
                 index+=1
             oscilate-=2
-            while oscilate>0 and index<len(s):
+            while oscilate>0 and index<len(s):   #up
                 rows[oscilate]+=(s[index])
                 oscilate-=1
                 index+=1
