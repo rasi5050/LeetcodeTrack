@@ -13,10 +13,8 @@ class Solution:
             maxRight.append(curRight)
             curRight=h if h>curRight else curRight
         maxRight.reverse()
-        print(maxRight)
         rain=0
         for i,h in enumerate(height):
-            print(min(maxLeft[i],maxRight[i]),h)
             rain+=max(min(maxLeft[i],maxRight[i])-h,0)
         return rain
         
