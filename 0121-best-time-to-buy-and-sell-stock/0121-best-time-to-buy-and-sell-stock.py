@@ -14,9 +14,10 @@ class Solution:
             curMax=max(price, curMax)
             rightMax.append(curMax)
         rightMax.reverse()
-        print(leftMin, rightMax)
-        # print(*rightMap)
         maxProfit=0
-        for i in range(len(prices)):
-            maxProfit=max(maxProfit, rightMax[i]-leftMin[i])
-        return maxProfit 
+        for i,j in zip(rightMax, leftMin):
+            maxProfit=max(maxProfit, i-j)
+        return maxProfit
+            
+         
+    
