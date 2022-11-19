@@ -20,18 +20,13 @@ class Solution:
 #         return maxProfit
             
         #intuition: two pointers from left to right (idea from: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/discuss/1735550/Python-Javascript-Easy-solution-with-very-clear-Explanation)
-        # if len(prices)==1:
-        #     return 0
-        left=0
-        right=1
-        maxProfit=0
+        left,right,maxProfit=0,1,0
         while right<len(prices):
             maxProfit=max(maxProfit, prices[right]-prices[left])
             if prices[right]<prices[left]:
                 left=right
             right+=1
-        return maxProfit
-    
+        return maxProfit 
     #status: success
     #analysis:Time O(n), going tru input exactly once
     #Space O(1), 3 variables used, hence O(1)
