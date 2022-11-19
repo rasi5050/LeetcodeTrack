@@ -20,8 +20,8 @@ class Solution:
 #         return maxProfit
             
         #intuition: two pointers from left to right (idea from: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/discuss/1735550/Python-Javascript-Easy-solution-with-very-clear-Explanation)
-        if len(prices)==1:
-            return 0
+        # if len(prices)==1:
+        #     return 0
         left=0
         right=1
         maxProfit=0
@@ -29,9 +29,7 @@ class Solution:
             maxProfit=max(maxProfit, prices[right]-prices[left])
             if prices[right]<prices[left]:
                 left=right
-                right+=1
-            else:
-                right+=1
+            right+=1
         return maxProfit
     
     #status: success
