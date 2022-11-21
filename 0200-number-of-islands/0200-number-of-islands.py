@@ -24,6 +24,4 @@ class Solution:
                 if l2>l1:
                     print(i,j)
                     count+=1
-                
-        print(visited)
         return count
