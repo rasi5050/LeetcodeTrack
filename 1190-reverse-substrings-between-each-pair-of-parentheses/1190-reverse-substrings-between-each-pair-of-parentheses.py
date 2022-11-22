@@ -9,7 +9,6 @@ class Solution:
                 stack.pop()
                 for char in revWord:        #(n)
                     stack.append(char)
-                revWord=""
             else:
                 stack.append(char)
         return "".join(stack)
