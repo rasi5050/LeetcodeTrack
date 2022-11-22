@@ -12,5 +12,4 @@ class Solution:
                 return True
             elif sumN in visited:
                 return False
-            n=sumN
-            sumN=0
+            n, sumN=sumN, 0
