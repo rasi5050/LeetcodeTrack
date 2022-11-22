@@ -4,13 +4,10 @@ class Solution:
         for char in s:                      #O(n)
             if char==')':
                 revWord=""
-                while stack[-1]!='(':       #O(n)
-                    revWord+=stack.pop()    #O(1)
+                while stack[-1]!='(': revWord+=stack.pop()          #O(n)
                 stack.pop()
-                for char in revWord:        #(n)
-                    stack.append(char)
-            else:
-                stack.append(char)
+                for char in revWord: stack.append(char)       #(n)           
+            else:stack.append(char)
         return "".join(stack)
     
     #analysis: Time O(n^2)
