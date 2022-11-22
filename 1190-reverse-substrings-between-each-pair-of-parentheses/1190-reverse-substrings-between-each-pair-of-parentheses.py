@@ -6,7 +6,7 @@ class Solution:
                 revWord=""
                 while stack[-1]!='(': revWord+=stack.pop()          #O(n)
                 stack.pop()
-                for char in revWord: stack.append(char)       #(n)           
+                for char in revWord: stack.append(char)       #O(n)           
             else:stack.append(char)
         return "".join(stack)
     
