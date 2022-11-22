@@ -46,3 +46,4 @@ class Solution:
             else: res.append(right); j-=1
         return res[::-1]
         #status: correct
+        #analysis: Time O(n), Space (1) auxillary space
