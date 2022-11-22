@@ -1,9 +1,9 @@
 class Solution:
     def reverseParentheses(self, s: str) -> str:
         stack=[]
-        revWord=""
         for char in s:                      #O(n)
             if char==')':
+                revWord=""
                 while stack[-1]!='(':       #O(n)
                     revWord+=stack.pop()    #O(1)
                 stack.pop()
