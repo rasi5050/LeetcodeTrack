@@ -45,4 +45,4 @@ class Solution:
             if left>right:res.append(left); i+=1
             else: res.append(right); j-=1
         return res[::-1]
-                
+        #status: correct
