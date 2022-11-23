@@ -24,15 +24,13 @@ class Solution:
             for duration in possibleDurations:
                 if (duration-item) in timeMap:
                     pairs=len(timeMap[duration-item])
-                    # print("item ", item , "duration-item ",duration-item,timeMap, "len ", pairs)
                     # same index case
                     if i in timeMap[duration-item]:            
                         pairs-=1
                     totalPairs+=pairs
                     pairs=0
             timeMap[item].remove(i)
-            if len(timeMap[item])==0: del timeMap[item]
-            # print(totalPairs)
+            # if len(timeMap[item])==0: del timeMap[item]
         return totalPairs
         
         
