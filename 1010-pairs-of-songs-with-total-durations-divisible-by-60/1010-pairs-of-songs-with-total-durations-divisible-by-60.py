@@ -1,4 +1,5 @@
 from collections import defaultdict
+from collections import Counter
 class Solution:
     def numPairsDivisibleBy60(self, time: List[int]) -> int:
         #do brute force
@@ -12,7 +13,7 @@ class Solution:
         # for i in range(len(time)):
         #     for j in range(i, len(time)):
         #         print(time[i]+time[j])
-        
+        """#correct code, commented to try out alternate version
         timeMap=defaultdict(set)
         minTime, maxTime = 500, 1
         for i,item in enumerate(time):
@@ -35,6 +36,19 @@ class Solution:
                     pairs=0
             timeMap[item].remove(i)
         return totalPairs
+        """
         
+        #intuition: convert to 2sum problem, idea from leetcode discussion(https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/discuss/256738/JavaC%2B%2BPython-Two-Sum-with-K-60)
+        
+        time=[eachTime%60 for eachTime in time]    
+        timeCounter=Counter()
+        totalPairs=0
+        for t in time:
+            if t==0:t=60
+            if 60-t in timeCounter:
+                totalPairs+=timeCounter[60-t]
+            if t==60:t=0
+            timeCounter[t]+=1
+        return totalPairs
         
         
