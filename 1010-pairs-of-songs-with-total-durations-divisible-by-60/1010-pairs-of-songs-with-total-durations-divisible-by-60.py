@@ -39,7 +39,7 @@ class Solution:
         """
         
         #intuition: convert to 2sum problem, idea from leetcode discussion(https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/discuss/256738/JavaC%2B%2BPython-Two-Sum-with-K-60)
-        
+        """working code
         time=[eachTime%60 for eachTime in time]    
         timeCounter=Counter()
         totalPairs=0
@@ -50,5 +50,11 @@ class Solution:
             if t==60:t=0
             timeCounter[t]+=1
         return totalPairs
-        
-        
+        """
+        #alternate approach2 from leetcode discussion solution (https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/discuss/256738/JavaC%2B%2BPython-Two-Sum-with-K-60)
+        c=[0] * 60
+        res=0
+        for t in time:
+            res += c[-t % 60]
+            c[t % 60] += 1
+        return res
