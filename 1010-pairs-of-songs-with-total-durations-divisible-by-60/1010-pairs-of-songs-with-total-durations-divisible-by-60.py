@@ -14,10 +14,14 @@ class Solution:
         #         print(time[i]+time[j])
         
         timeMap=defaultdict(set)
+        minTime, maxTime = 500, 1
         for i,item in enumerate(time):
             timeMap[item].add(i)
-
-        possibleDurations=[60,120,180,240,300,360,420,480,540,600,660,720,780,840,900,960]
+            minTime=item if item < minTime else minTime
+            maxTime=item if item>maxTime else maxTime
+        start,end=(minTime*2)//60, (maxTime*2)//60
+        # possibleDurations=[60,120,180,240,300,360,420,480,540,600,660,720,780,840,900,960]
+        possibleDurations=[60*i for i in range(start,end+1)]
                           
         totalPairs=0
         for i,item in enumerate(time):
