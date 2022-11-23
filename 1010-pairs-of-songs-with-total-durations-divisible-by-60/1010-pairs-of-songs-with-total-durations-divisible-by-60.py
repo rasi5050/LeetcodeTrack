@@ -30,7 +30,6 @@ class Solution:
                     totalPairs+=pairs
                     pairs=0
             timeMap[item].remove(i)
-            # if len(timeMap[item])==0: del timeMap[item]
         return totalPairs
         
         
