@@ -1,0 +1,27 @@
+from collections import defaultdict
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+
+
+        preReqMapping=defaultdict(set)
+        for preReq in prerequisites:
+            preReqMapping[preReq[0]].add(preReq[1])
+            
+        def dfs(preReq):
+            for eachMap in preReq:
+                if eachMap in currentChain:
+                    return False
+                currentChain.add(eachMap)
+                if eachMap in preReqMapping and dfs(preReqMapping[eachMap])==False:
+                    return False
+                currentChain.remove(eachMap)
+        
+        # for course in range(1):
+        for course in range(numCourses):
+            currentChain={course}
+            if course in preReqMapping and dfs(preReqMapping[course])==False:
+                print(currentChain, "hit False for ", course)
+                return False 
+            if course in preReqMapping: del preReqMapping[course]
+            print(currentChain)
+        return True
