@@ -20,8 +20,8 @@ class Solution:
         for course in range(numCourses):
             currentChain={course}
             if course in preReqMapping and dfs(preReqMapping[course])==False:
-                print(currentChain, "hit False for ", course)
+                # print(currentChain, "hit False for ", course)
                 return False 
             if course in preReqMapping: del preReqMapping[course]
-            print(currentChain)
+            # print(currentChain)
         return True
