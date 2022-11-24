@@ -15,6 +15,7 @@ class Solution:
                 if eachMap in preReqMapping and dfs(preReqMapping[eachMap])==False:
                     return False
                 currentChain.remove(eachMap)
+                if eachMap in preReqMapping: del preReqMapping[eachMap]
         
         # for course in range(1):
         for course in range(numCourses):
@@ -22,6 +23,6 @@ class Solution:
             if course in preReqMapping and dfs(preReqMapping[course])==False:
                 # print(currentChain, "hit False for ", course)
                 return False 
-            if course in preReqMapping: del preReqMapping[course]
+            # if course in preReqMapping: del preReqMapping[course]
             # print(currentChain)
         return True
