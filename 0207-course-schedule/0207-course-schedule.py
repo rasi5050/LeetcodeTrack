@@ -7,9 +7,9 @@ class Solution:
         for a,b in prerequisites:
             courseMapping[a].add(b)
         visited=set()
+        
         #dfs code
         #it will get a set, process the set
-        
         def dfs(mapSet):
             for each in mapSet:
                 if each in visited:
