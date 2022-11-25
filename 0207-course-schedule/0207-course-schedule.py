@@ -26,4 +26,5 @@ class Solution:
             visited.add(course)
             if not dfs(courseMapping[course]):return False
             visited.remove(course)
+            del courseMapping[course]
         return True            
