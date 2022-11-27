@@ -4,7 +4,7 @@ class Solution:
         cumPrev=0
         s=list(s)
         for i in reversed(range(len(shifts))):
-            shifts[i]=(shifts[i]+cumPrev)%26
+            shifts[i]=(shifts[i]+cumPrev)
             cumPrev=shifts[i]
             s[i]=chr((ord(s[i])-97+shifts[i])%26+97)
             # if ord(s[i])+shifts[i]>122:
