@@ -1,5 +1,6 @@
 class Solution:
     def secondsToRemoveOccurrences(self, s: str) -> int:
+        """
         #loop sliding window, then replace
         s=list(s)
         counter=0
@@ -14,3 +15,10 @@ class Solution:
             if switch==False: return counter
             counter+=1
         return counter
+        """
+    #alternate approach: from leetcode discussion (https://leetcode.com/problems/time-needed-to-rearrange-a-binary-string/discuss/2454424/Python-oror-Easy-Approach-oror-Replace-(5-lines)): inbuilt string replace
+        count=0
+        while ('01' in s):
+            s=s.replace('01','10')
+            count+=1
+        return count
