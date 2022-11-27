@@ -9,7 +9,7 @@ class Solution:
             if ord(s[i])+shifts[i]>122:
                 s[i]=chr(96+(ord(s[i])+shifts[i])%122)
             else:
-                s[i]=chr(96+(ord(s[i])+shifts[i])%96)
+                s[i]=chr((ord(s[i])+shifts[i]))
             
         # print(shifts)
         return ''.join(s)
