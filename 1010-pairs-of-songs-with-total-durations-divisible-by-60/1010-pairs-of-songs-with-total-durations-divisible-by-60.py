@@ -7,7 +7,7 @@ class Solution:
         map=defaultdict(list)
         count=0
         
-        print(time)
+        # print(time)
         
         for i,t in enumerate(time):
             if (60-t) in map:
@@ -15,7 +15,7 @@ class Solution:
             elif (t==0 and t in map):
                 count+=len(map[t])
             map[t].append(i)
-        print(map)
+        # print(map)
         return count
         
             
