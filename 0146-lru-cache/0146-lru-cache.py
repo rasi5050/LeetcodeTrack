@@ -49,6 +49,8 @@ class LRUCache:
             key=self.tail.next.key
             self.remove(self.tail.next)
             del self.map[key]
+    #ref: self try3
+    #ref:11/28/2022P2:track1-cpGrind75;3QuestionPerDay(perQuestion-x3pomo),perDay-x10pomo;35hoursperWeek;15hrPerTopic+15hrPerTopic+5hrBuffer;Day51/52:1.repeat;pairOfSongsDivBy60Timed25Mins-x1pomo(5:30-6:00),2.repeat;minimumAbsoluteDifferenceTimed25Mins-x1pomo(6:00-6:30),3.repeat;lruCacheTimed25Mins-x1pomo(6:30-7:00),4.paypalOa-x2pomo(7:00-8:00),5.addQuestionToDrive,markInInternshipSheet-x2pomo(8:00-9:00)=x7pomo(5:30-9:00)
 
 
 # Your LRUCache object will be instantiated and called as such:
