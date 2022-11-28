@@ -10,10 +10,10 @@ class Solution:
         # print(time)
         
         for i,t in enumerate(time):
-            if (60-t) in map:
-                count+=len(map[(60-t)])
-            elif (t==0 and t in map):
-                count+=len(map[t])
+            if (60-t)%60 in map:
+                count+=len(map[(60-t)%60])
+            # elif (t==0 and t in map):
+            #     count+=len(map[t])
             map[t].append(i)
         # print(map)
         return count
