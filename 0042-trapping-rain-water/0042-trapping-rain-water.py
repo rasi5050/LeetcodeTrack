@@ -12,8 +12,6 @@ class Solution:
             maxHToRight.append(rightMax)
             rightMax=max(rightMax, h)
         maxHToRight.reverse()
-        # print(maxHToLeft)
-        # print(maxHToRight)
         res=0
         for i,h in enumerate(height):
             res+=max(min(maxHToLeft[i], maxHToRight[i])-h,0)
