@@ -6,6 +6,12 @@
 #         self.right = right
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
+        #intuition: implement recursion similar to studied in haskell (SPFM: sem1;MSCS fall22 Syracuse university)
+        #recursive approach
         if root==None:
             return 0
         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+        
+        
+            
+        
