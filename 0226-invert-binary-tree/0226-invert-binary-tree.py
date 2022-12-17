@@ -13,7 +13,6 @@ class Solution:
             #<flipping part>
             root.left, root.right = root.right, root.left
             #recursive part
-            flip(root.left)    
-            flip(root.right)
+            return flip(root.left) or flip(root.right)
         flip(root)
         return root
