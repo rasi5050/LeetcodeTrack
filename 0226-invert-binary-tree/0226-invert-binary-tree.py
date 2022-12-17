@@ -13,10 +13,11 @@ class Solution:
             #<flipping part>
             root.left, root.right = root.right, root.left
             #recursive part
-            # return flip(root.left) or flip(root.right)
+            return flip(root.left) or flip(root.right)
+            """
             #or the recursive part can be independent calls on left and right
             flip(root.left)
             flip(root.right)
-            
+            """
         flip(root)
         return root
