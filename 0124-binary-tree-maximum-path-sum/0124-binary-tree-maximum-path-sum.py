@@ -8,6 +8,7 @@ class Solution:
     def  maxPathSum(self, root: Optional[TreeNode]) -> int:
         res=[root.val]
         def recurse(root):
+            
             if not root:
                 return 0
             l=max(recurse(root.left),0)
