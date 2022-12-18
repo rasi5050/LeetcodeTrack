@@ -8,8 +8,8 @@ class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         #bfs solution
         res=[]
-        frontier=[]
-        if root: frontier=[root]
+        if not root: return []
+        frontier=[root]
         while frontier:
             next=[]
             temp=[]
