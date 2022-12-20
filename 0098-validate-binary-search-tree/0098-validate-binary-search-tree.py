@@ -53,7 +53,7 @@ class Solution:
         def checker(root, lower, upper):
             if not root: 
                 return True
-            if lower>=root.val or upper<= root.val:
+            elif lower>=root.val or upper<= root.val:
                 return False
             else:
                 return checker(root.left, lower, root.val) and checker(root.right, root.val, upper)
