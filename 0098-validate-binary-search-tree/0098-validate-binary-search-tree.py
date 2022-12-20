@@ -58,4 +58,5 @@ class Solution:
             else:
                 return checker(root.left, lower, root.val) and checker(root.right, root.val, upper)
         return checker(root, -math.inf, math.inf)
+    #status: correct complete help from (https://leetcode.com/problems/validate-binary-search-tree/discuss/2409583/Python-oror-Easily-Understood-oror-Faster-than-96-oror-Recursion)
         
