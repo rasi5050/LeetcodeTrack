@@ -30,7 +30,6 @@ class Solution:
             next=[]
             for index in frontier:
                 i,j=index
-                # print(next)
                 if not (i<0 or j<0 or i>len(image)-1 or j>len(image[0])-1 or image[i][j]!=fromColor):
                     image[i][j]=color
                     next.append((i-1, j))
