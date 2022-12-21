@@ -27,7 +27,7 @@ class Solution:
     #analysis: Time O(m*n); all the elements of matrix are visited once
     # Space O(n); frontier[] and next[] used for temperory storage
     #ref: 12/21/2022P2:track1-cpGrind75;3QuestionPerDay(perQuestion-x3pomo),perDay-x10pomo;35hoursperWeek;15hrPerTopic+15hrPerTopic+5hrBuffer;Day57/58,1.kThSmallestElementInABstTimed25Mins-x1pomo(5:30-6:00),2.implement-x2pomo(6:00-7:00),3.study:graph-x1pomo(7:00-7:30),4.numberOfIslandsTimed25Mins-x1pomo(7:30-8:00),5.implement-x2pomo(8:00-9:00),6.floodFillTimed25Mins-x1pomo(9:00-9:30),7.implement-x2pomo(9:30-10:30),8.01MatrixTimed25Mins-x1pomo(10:30-11:00),9.absorber-x1pomo(11:00-11:30)=x12pomo(5:30-11:30)
-    
+        """working code: commented for minimizing code
         #do via dfs
         def dfs(i, j):
             nonlocal grid
@@ -48,3 +48,25 @@ class Solution:
                     noOfIslands+=1
                     dfs(i, j)
         return noOfIslands
+        """
+     #do via dfs-2: idea from (https://leetcode.com/problems/number-of-islands/discuss/56340/Python-Simple-DFS-Solution)
+        def dfs(i, j):
+            nonlocal grid
+            #change: expanding the base conditions
+            if 0>i or i>len(grid)-1 or 0>j or j>len(grid[0])-1 or grid[i][j]!='1': 
+                return
+            grid[i][j]='-1'
+            dfs(i-1, j)
+            dfs(i+1, j)
+            dfs(i,j- 1)
+            dfs(i,j+ 1)                
+            
+        noOfIslands=0            
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j]=='1':
+                    noOfIslands+=1
+                    dfs(i, j)
+        return noOfIslands
+    
+    
