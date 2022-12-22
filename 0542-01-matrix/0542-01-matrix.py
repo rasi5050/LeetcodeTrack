@@ -7,9 +7,7 @@ class Solution:
                 if cell:
                     top = matrix[i-1][j] if i else float('inf')
                     left = matrix[i][j-1] if j else float('inf')
-                    matrix[i][j] = min(top, left) + 1
-        print(matrix)
-        
+                    matrix[i][j] = min(top, left) + 1        
         for i in reversed(range(m)):
             for j in reversed(range(n)):
                 if cell := matrix[i][j]:
