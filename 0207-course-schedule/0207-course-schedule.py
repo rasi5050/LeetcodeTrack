@@ -1,27 +1,24 @@
-from collections import defaultdict
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-
-
-        preReqMapping=defaultdict(set)
-        for preReq in prerequisites:
-            preReqMapping[preReq[0]].add(preReq[1])
-            
-        def dfs(preReq):
-            for eachMap in preReq:
-                if eachMap in currentChain:
-                    return False
-                currentChain.add(eachMap)
-                if eachMap in preReqMapping and dfs(preReqMapping[eachMap])==False:
-                    return False
-                currentChain.remove(eachMap)
+        #create adjacency list
+        adj = { i:[] for i in range(numCourses)}
+        for req in prerequisites:
+            a,b=req
+            adj[a].append(b)
+        # print(adj)    
         
-        # for course in range(1):
-        for course in range(numCourses):
-            currentChain={course}
-            if course in preReqMapping and dfs(preReqMapping[course])==False:
-                print(currentChain, "hit False for ", course)
-                return False 
-            if course in preReqMapping: del preReqMapping[course]
-            print(currentChain)
+        visited=set()
+        def dfs(course):
+            if course in visited: return False
+            if adj[course] == []: return True
+            visited.add(course)
+            for pre in adj[course]:
+                if not dfs(pre): return False
+            visited.remove(course)    
+            adj[course]=[]
+            return True
+                
+                
+        for req in prerequisites:
+            if dfs(req[0])==False: return False
         return True
