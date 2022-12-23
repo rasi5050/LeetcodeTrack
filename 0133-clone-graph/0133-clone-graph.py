@@ -38,6 +38,12 @@ class Solution:
                 clone.neighbors.append(dfs(neighbor))
             return clone
         return dfs(node) if node else None
+    #status: correct (complete help from neetcode youtube solution ((https://www.youtube.com/watch?v=mQeF6bN8hMk&t=707s)))
+    #analysis: Time O(|V|+|E|); visiting all nodes once, 
+    #Space O(|V| + |E|); entire graph is clone and stored
+    #ref: 12/23/2022P2:track1-cpGrind75;3QuestionPerDay(perQuestion-x3pomo),perDay-x10pomo;35hoursperWeek;15hrPerTopic+15hrPerTopic+5hrBuffer;Day59/60,1.cloneGraphTimed25Mins-x1pomo(5:30-6:00),2.implement-x2pomo(6:00-7:00),3.pacificAtlanticWaterFlowTimed25Mins-x1pomo(7:00-7:30),4.implement-x2pomo(7:30-8:30),5.courseScheduleTimed25Mins-x1pomo(8:30-9:00),6.implement-x2pomo(9:00-10:00),7.studyHeap-x1pomo(10:00-10:30),8.mergeKSortedListsTimed25Mins-x1pomo(10:30-11:00),9.implement-x1pomo(11:00-11:30)=x12pomo(5:30-11:30)
+
+    
             
             
             
