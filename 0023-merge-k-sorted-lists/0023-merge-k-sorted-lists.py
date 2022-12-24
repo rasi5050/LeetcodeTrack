@@ -28,7 +28,6 @@ class Solution:
         h=[]
         for i, ll in enumerate(lists):
             if ll: heapq.heappush(h, (ll.val, i))
-        print(h)
         head=cur=ListNode()
         while(h):
             val, i = heapq.heappop(h)
@@ -38,4 +37,4 @@ class Solution:
             if node:
                 heapq.heappush(h, (node.val, i))
         return head.next
-        
+        #idea from leetcode solution comments of user "sfdye" (oct 12 2018): (https://leetcode.com/problems/merge-k-sorted-lists/solution/)
