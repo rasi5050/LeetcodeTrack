@@ -11,6 +11,7 @@ class TrieNode:
             node=node.children[c]
         node.isWord=True
         
+    #below section not included in neetcode solution; added because neetcode solution resulted in TLE    
     def prune(self, word): #added new from neetcode comments user: @LeoK
         curr = self
         stack = []        
@@ -23,6 +24,7 @@ class TrieNode:
                 return
             else:
                 del t_node.children[ch]
+    #section ends here
 class Solution:
     def findWords(self, board: List[List[str]], words: List[str]) -> List[str]:
         root=TrieNode()
@@ -53,7 +55,7 @@ class Solution:
             for c in range(COLS):
                 dfs(r, c, root, "")
         return list(res)
-    #status: correct(complete help from neetcode solution); didnot unserstand the implementation
+    #status: correct(complete help from neetcode solution(https://www.youtube.com/watch?v=asbcE9mZz_U)); didnot unserstand the implementation; which gave TLE, so added "def prune(self, word):" from neetcode comments by user: @LeoK
     #Analysis: Time O(mn*4^mn)
     #Space O(wordLength*numberOfWords)
     #ref: 12/27/2022P2:track1-cpGrind75;3QuestionPerDay(perQuestion-x3pomo),perDay-x10pomo;35hoursperWeek;15hrPerTopic+15hrPerTopic+5hrBuffer;Day64/64,1.wordSearch2Timed25Mins-x1pomo(5:30-6:00),2.implement-x1pomo(6:00-7:00),3.studyIntervals-x1pomo(7:00-7:30),4.mergeIntervalsTimed;25Mins-x1pomo(7:30-8:00),5.implement-x2pomo(8:00-9:00),6.insertIntervalTImed25Mins-x1pomo(9:00-9:30),7.implement-x2pomo(9:30-10:30),8.nonOverlappingIntervalsTimed25Mins-x1pomo(10:30-11:00),9.absorber-x1pomo(11:00-11:30)=x12pomo(5:30-11:30)
