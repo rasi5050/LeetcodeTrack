@@ -52,3 +52,7 @@ class Solution:
             dp1=dp1+dp2
             dp2=dp1T
         return dp1
+    #status: correct: dp idea from neetcode youtube solution (https://www.youtube.com/watch?time_continue=619&v=Y0lT9Fck7qI&feature=emb_logo)
+    #Analysis: Time O(number of subproblems * work per subproblem)=O(n)*O(number of ways to go from further subprblem)= O(1) ==> O(n)
+    # Space: O(1), storing only 2 variables dp1, dp2
+    #ref: 12/28/2022P2:track1-cpGrind75;3QuestionPerDay(perQuestion-x3pomo),perDay-x10pomo;35hoursperWeek;15hrPerTopic+15hrPerTopic+5hrBuffer;Day65/66,1.2.studyDynamicProgramming2(https://dev.to/nikolaotasevic/dynamic-programming--7-steps-to-solve-any-dp-interview-problem-3870)-x1pomo(5:30-6:00),2.climbingStairsTimed25Mins-x1pomo(6:00-6:30),3.implement-x2pomo(6:30-7:30),4.coinChangerTimed25Mins-x1pomo(7:30-8:00),5.implement-x2pomo(8:00-9:00),6.houseRobber-x1pomo(9:00-9:30),7.implement-x2pomo(9:30-10:30),8.longestIncreasingSubsequenceTimed25Mins-x1pomo(10:30-11:00),9.absorber-1pomo(11:00-11:30)=x12pomo(5:30-11:30)
