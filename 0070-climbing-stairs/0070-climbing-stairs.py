@@ -1,7 +1,5 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        
-        #say n=5
         memo={}
         def recurse(i):
             if i in memo: return memo[i]
