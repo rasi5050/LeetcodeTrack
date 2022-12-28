@@ -37,10 +37,18 @@ class Solution:
         """
     
         #using DP
-            
+        """    working code; commented for optimization
         dp =[0]*(n+1)
         #base cases
         dp[n]=dp[n-1]=1
         for i in range(n-2, -1, -1):
             dp[i]=dp[i+1]+dp[i+2]
         return dp[0]
+        """
+    #this is further optimized to 
+        dp1=dp2=1
+        for i in range(n-2, -1, -1):
+            dp1T=dp1
+            dp1=dp1+dp2
+            dp2=dp1T
+        return dp1
