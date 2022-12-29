@@ -34,3 +34,6 @@ class Solution:
             house1=house2
             house2=temp
         return house2
+    #status: correct; didnot understand; solution from neetcode youtube solution (https://www.youtube.com/watch?time_continue=634&v=73r3KWiEvyk&feature=emb_logo&themeRefresh=1)
+    #Analysis: O(n); making decision tru each houses, Space O(1)
+    #ref: 12/29/2022P2:track1-cpGrind75;3QuestionPerDay(perQuestion-x3pomo),perDay-x10pomo;35hoursperWeek;15hrPerTopic+15hrPerTopic+5hrBuffer;Day66/66,1.houseRobber-x1pomo(5:30-6:00),2.implement-x2pomo(6:00-7:00),3.longestIncreasingSubsequenceTimed25Mins-x1pomo(7:00-7:30),4.implement-x2pomo(7:30-8:30),5.0/1knapSackTimed25Mins-x1pomo(8:30-9:00),6.implement-x2pomo(9:00-10:00),7.longestCommonSubsequenceTimed25Mins-x1pomo(10:00-10:30),8.implement-x2pomo(10:30-11:30)=x12pomo(5:30-11:30)
