@@ -21,7 +21,16 @@ class Solution:
         so whether to rob house 3 is dependent on the maximum amount you can rob if u rob house 3 also, satisfying the criteria, it will be maximum amount till house1 + amount from house3, or if u dont opt to rob house 3 your robbed money will continue as same as what you got upto house 3
         so what essentially I am making a decision is in which combination ie. considering current house or not give me highest money
         """
+        """took idea from neetcode solution and changed to version
         dp=[0]*(len(nums)+2)
         for i,w in zip(range(2,len(nums)+2+1),nums):
             dp[i]=max(w + dp[i-2], dp[i-1])
         return dp[-1]
+        """
+        #concise version from neetcode solution
+        house1=house2=0
+        for moneyFromCurHouse in nums:
+            temp=max(moneyFromCurHouse + house1, house2)
+            house1=house2
+            house2=temp
+        return house2
