@@ -58,3 +58,5 @@ class Solution:
             else:
                 dp[i] = dp[i//2]
         return dp
+    #status: correct
+    #Analysis: Time O(n)
