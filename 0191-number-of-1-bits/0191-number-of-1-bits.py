@@ -3,7 +3,7 @@ class Solution:
         count=0
         while n:
             if n & 1: count+=1
-            n>>=1
+            n>>=1  #divide by 2 a.k.a remove last bit
         return count    
     
     #status: correct
