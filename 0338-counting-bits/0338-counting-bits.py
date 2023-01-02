@@ -31,6 +31,7 @@ class Solution:
         """
         
         #implement recursion + memoization a.k.a dynamic programming
+        """working code; commmented to try alternate method 
         memo={}
         def solve(n):
             if n in memo: return memo[n] 
@@ -48,4 +49,12 @@ class Solution:
         for i in range(n+1):
             res.append(solve(i))
         return res
-        
+        #Analysis: Time O(n)
+        """
+        dp=[0]*(n+1)
+        for i in range(n+1):
+            if i%2:
+                dp[i] = 1+ dp[i//2]
+            else:
+                dp[i] = dp[i//2]
+        return dp
