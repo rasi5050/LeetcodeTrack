@@ -18,3 +18,4 @@ class Solution:
         for i,n in enumerate(nums):
             res^=i^n
         return res
+        #status: correct; help from leetcode discussion (https://leetcode.com/problems/missing-number/discuss/69786/3-different-ideas%3A-XOR-SUM-Binary-Search.-Java-code)
