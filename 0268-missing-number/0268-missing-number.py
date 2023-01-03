@@ -16,5 +16,5 @@ class Solution:
         #using bitwise operator XOR (^); idea from (https://leetcode.com/problems/missing-number/discuss/69786/3-different-ideas%3A-XOR-SUM-Binary-Search.-Java-code) comments @user:"hidro"
         res=len(nums)
         for i,n in enumerate(nums):
-            res=res^i^n
+            res^=i^n
         return res
