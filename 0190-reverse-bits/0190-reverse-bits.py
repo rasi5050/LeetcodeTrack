@@ -16,7 +16,7 @@ class Solution:
         binaryNum=0
         for i in range(32):
             binaryNum<<=1
-            binaryNum+=(n&1)
+            binaryNum|=(n&1)<<0
             n>>=1
 
         return binaryNum
