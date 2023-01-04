@@ -15,8 +15,8 @@ class Solution:
     
         binaryNum=0
         for i in range(32):
-            binaryNum<<=1
-            binaryNum|=(n&1)<<0
-            n>>=1
+            binaryNum<<=1           #creating a placeholder zero at the end
+            binaryNum+=(n&1)     #setting last bit of binaryNum to 1 if last bit of n is 1, or viceversa; this can also be written as "binaryNum|=(n&1)<<0"
+            n>>=1       #remove the last considered bit form n
 
         return binaryNum
