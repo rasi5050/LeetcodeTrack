@@ -1,5 +1,6 @@
 class Solution:
     def reverseBits(self, n: int) -> int:
+        """#working code, commented to try alternate method
         res=[]
         
         while n:
@@ -10,4 +11,12 @@ class Solution:
             res.append('0')
             length+=1
         return int(''.join(res),2)
+    """
     
+        binaryNum=0
+        for i in range(32):
+            binaryNum<<=1
+            binaryNum+=(n&1)
+            n>>=1
+
+        return binaryNum
