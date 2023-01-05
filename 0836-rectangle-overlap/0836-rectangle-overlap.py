@@ -37,7 +37,7 @@ class Solution:
         #Analysis: Time O(1); constant number of cases
         #Space O(1)
         #ref: 1/5/2023P2:track1-cpGrind75;3QuestionPerDay(perQuestion-x3pomo),perDay-x10pomo;35hoursperWeek;15hrPerTopic+15hrPerTopic+5hrBuffer;Day73/74,0.mastercardPsymetrics-x1pomo(5:30-6:00),1.rectangleOverlapTimed25Mins-x1pomo(6:00-6:30),2.implement-x2pomo(6:30-7:30),3.kClosestPointsToOriginTimed25Mins-x1pomo(7:30-8:00),4.implement-x2pomo(8:00-9:00),5.rectangleAreaTimed25Mins-x1pomo(9:00-9:30),6.implement-x2pomo(9:30-10:30),7.twoSumTimed25Mins-x1pomo(10:30-11:00),8.absorber-x1pomo(11:00-11:30)=x12pomo(5:30-11:30)
-        """
+        
         (x1,y1) = (rec1[0],rec1[1])
         (x2,y2) = (rec1[2],rec1[3])
         
@@ -45,11 +45,12 @@ class Solution:
         (a2,b2) = (rec2[2],rec2[3])
         
         if x1>=a2 or a1>=x2: return False
-        if y1>=b2 or a2>=y2: return False
+        if y1>=b2 or b1>=y2: return False
         
         return True
         """
         if (rec1[0]>=rec2[2] or rec2[0]>=rec1[2]): return False
         if (rec1[1]>=rec2[3] or rec2[1]>=rec1[3]): return False
         return True
+        """
         
