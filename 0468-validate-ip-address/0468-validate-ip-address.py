@@ -39,3 +39,7 @@ class Solution:
                     if char not in hex_digits: return "Neither"
             return "IPv6"
         return "Neither"
+    
+    #status: correct; intuition from leetcode solution (https://leetcode.com/problems/validate-ip-address/solution/)
+    #Analysis: Time O(n); loops tru each character, Space O(1)
+    #ref: 1/5/2023P2:track1-cpGrind75;3QuestionPerDay(perQuestion-x3pomo),perDay-x10pomo;35hoursperWeek;15hrPerTopic+15hrPerTopic+5hrBuffer;Day73/74-ciscoDay1/1,1.validateIpAddressesTimed25Mins-x1pomo(14:00-14:30),2.implement-x2pomo(14:30-15:30),3.maximumDifferenceBetweenIncreasingElements-x1pomo(15:30-16:00),4.implement-x2pomo(16:00-17:00)=x6pomo(14:00-17:00)
