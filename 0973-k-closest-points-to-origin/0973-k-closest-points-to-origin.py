@@ -26,8 +26,8 @@ class Solution:
         
         minHeap=[]
         for index,(x,y) in enumerate(points):
-            minHeap.append((x**2+y**2, index))
-        heapq.heapify(minHeap)
+            minHeap.append((x**2+y**2, index))          #Time O(1)
+        heapq.heapify(minHeap)                          #Time O(n)
         res=[]
         for _ in range(k):
             res.append(points[heapq.heappop(minHeap)[1]])
