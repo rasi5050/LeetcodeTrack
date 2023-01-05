@@ -9,10 +9,9 @@ class Solution:
         y1 = max(B, F)
         x2 = min(C, G)
         y2 = min(D, H)
-        overlapArea = (x2-x1)*(y2-y1) if x1<x2 and y1<y2 else 0
+        overlapArea = (x2-x1)*(y2-y1) if (x1<x2 and y1<y2) else 0   #checking overlap
         
         
-        print(overlapArea)
         
         #total area = area of rect1 + area of rect2 - overlapArea (to avoid double counting of overlapping area, similar to A U B = A + B - (A intersection B))
         
