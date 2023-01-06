@@ -16,10 +16,10 @@ class Solution:
         res=0
         curMin=curMax=nums[0]
         for n in nums[1:]:
-            if n<curMin: 
+            if n<curMin: #reset min, max to current level; start again
                 curMin=n
                 curMax=n
-            elif n>curMax: 
+            elif n>curMax: #when there is a hike; record the height
                 curMax=n
                 res = max(res, curMax - curMin)
         return res if res else -1
