@@ -63,8 +63,16 @@ class Solution:
         #working; now increase efficiency
         
         #adding extra cases for efficiency
+        #case1. if number of words in boards in not enough for required word
         m,n=len(board), len(board[0])
+        
         if (m*n)<len(word): return False
+        
+        from collections import Counter
+        word_freq = Counter(word)
+        if word_freq[word[0]]>word_freq[word[-1]]:
+            word=word[::-1]
+        
         visited=set()
         def dfs(x, y , i):   
             if i==len(word):
@@ -77,7 +85,11 @@ class Solution:
                 return False
             
             visited.add((x,y))
+            # temp = board[r][c]
+            # board[r][c] = '#'
+            
             res = dfs(x+1, y, i+1) or dfs(x-1, y, i+1) or dfs(x, y-1, i+1) or dfs(x, y+1, i+1)
+            # board[r][c] = temp
             visited.remove((x,y))
             return res
         
