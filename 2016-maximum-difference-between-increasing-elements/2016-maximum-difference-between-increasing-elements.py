@@ -33,7 +33,7 @@ class Solution:
         for n in nums[1:]:
             if n>curMin:
                 maxDiff = max(maxDiff, n-curMin)
-            curMin = min(curMin, n)
+            curMin = min(curMin, n)     #this can also be considered as dynamic programming as the minimum depends of the previous value(for minimum) of n
         return maxDiff
 
         
