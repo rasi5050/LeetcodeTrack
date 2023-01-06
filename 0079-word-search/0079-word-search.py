@@ -30,6 +30,7 @@ class Solution:
                 visited.remove((r,c))
         return False
         """
+        """working code; commented to increase efficiency
         visited = set()
         def dfs(x,y,curWord, word, i):
             #another base condition to chech bounds and visited
@@ -58,4 +59,34 @@ class Solution:
                 if board[r][c]==word[0] and dfs(r,c, word[0], word,i:=1)==True: return True
                 # visited.remove((r,c))
         return False
+        """
+        #working; now increase efficiency
+        
+        #adding extra cases for efficiency
+        m,n=len(board), len(board[0])
+        if (m*n)<len(word): return False
+        visited=set()
+        def dfs(x, y , i):   
+            if i==len(word):
+                return True
+            if (x<0 or y<0 or 
+            x>len(board)-1 or 
+            y>len(board[0])-1 or 
+            board[x][y]!=word[i] or
+            (x,y) in visited):
+                return False
+            
+            visited.add((x,y))
+            res = dfs(x+1, y, i+1) or dfs(x-1, y, i+1) or dfs(x, y-1, i+1) or dfs(x, y+1, i+1)
+            visited.remove((x,y))
+            return res
+        
+        for r in range(len(board)):
+            for c in range(len(board[0])):
+                if dfs(r,c, 0): return True
+        return False
+            
+            
+            
+        
             
