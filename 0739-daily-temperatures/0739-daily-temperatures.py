@@ -22,7 +22,11 @@ class Solution:
                 res[index]=i-index
             stack.append(incoming)
         return res
-            
+        #status: correct
+        #Analysis: Time O(n); traversing tru all elements once
+        #Space O(n); for storing resultant array
+        #ref: 1/8/2023P2:track1-cpGrind75;3QuestionPerDay(perQuestion-x3pomo),perDay-x10pomo;35hoursperWeek;15hrPerTopic+15hrPerTopic+5hrBuffer;Day75/76-c3AiDay1/2,0.preserveStreak,1.dailyTemperaturesTImed25Mins-x1pomo(18:00-18:30),2.implement-x2pomo(18:30-19:30),3.absorber-x1pomo(19:30-20:00)=x4pomo(18:00-20:00)
+
         
                     
                 
