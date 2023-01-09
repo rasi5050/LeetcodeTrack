@@ -37,14 +37,15 @@ class Solution:
             'u': ['a']
         }
         
-        @lru_cache(None)
+        memo={}
         def dfs(i, char):
+            if (i, char) in memo: return memo[(i, char)]
             if i==0:
                 return 1
             
-            total=0
+            memo[(i, char)]=0
             
             for edge in map[char]:
-                total = (total + dfs(i-1, edge)) % 1000000007
-            return total
+                memo[(i, char)] = (memo[(i, char)] + dfs(i-1, edge)) % 1000000007
+            return memo[(i, char)]
         return dfs(n, "")
