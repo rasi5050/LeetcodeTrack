@@ -48,4 +48,4 @@ class Solution:
             for edge in map[char]:
                 memo[(i, char)] = (memo[(i, char)] + dfs(i-1, edge)) % 1000000007
             return memo[(i, char)]
-        return dfs(n, "")
+        return dfs(n, "") % 1000000007
