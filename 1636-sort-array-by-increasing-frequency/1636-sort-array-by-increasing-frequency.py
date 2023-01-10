@@ -12,7 +12,7 @@ class Solution:
         res=[]
         for freq in sorted(mapFreq):
             for val in sorted(mapFreq[freq])[::-1]:
-                res=res+[val]*freq
+                res.extend([val]*freq)
         return res
     
     #status: correct
