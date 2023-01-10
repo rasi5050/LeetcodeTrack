@@ -7,10 +7,10 @@ class Solution:
         map={}
         total=0
         for t in time:
-            if t==0 and t in map:
-                total+=map[t]
-            elif 60-t in map:
-                total+=map[60-t]
+            # if t==0 and t in map:
+            #     total+=map[t]
+            if (60-t)%60 in map:
+                total+=map[(60-t)%60]
             map[t] = map.get(t,0) + 1
         return total
                 
