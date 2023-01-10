@@ -1,19 +1,18 @@
-from collections import defaultdict
 class Solution:
     def numPairsDivisibleBy60(self, time: List[int]) -> int:
-        #convert all time to %60, then its 2sum Problem
+        #convert problem into 2 sum by modding all value by 60
+        for i in range(len(time)):
+            time[i]%=60
+        print(time)
         
-        time = [-i%60 for i in time]
-        map=defaultdict(list)
-        count=0
+        map={}
+        total=0
+        for t in time:
+            if t==0 and t in map:
+                total+=map[t]
+            elif 60-t in map:
+                total+=map[60-t]
+            map[t] = map.get(t,0) + 1
+        return total
+                
         
-        # print(time)
-        
-        for i,t in enumerate(time):
-            if (60-t)%60 in map:
-                count+=len(map[(60-t)%60])
-            map[t].append(i)
-        # print(map)
-        return count
-        
-            
