@@ -17,3 +17,6 @@ class Solution:
                     visited.remove(i)
         recurse(['dummy'])
         return count[0]
+    #status: correct
+    #Analysis: Time O(n^2), Space O(1)
+    #ref: 1/10/2023P2:track1-cpGrind75;3QuestionPerDay(perQuestion-x3pomo),perDay-x10pomo;35hoursperWeek;15hrPerTopic+15hrPerTopic+5hrBuffer;Day76/76-,1.implement-x2pomo(12:30-13:30),2.Daily TemperaturesTimed25Mins-x1pomo(13:30-14:00),3.absorber-x1pomo(14:00-14:30)=x4pomo(12:30-14:30)
