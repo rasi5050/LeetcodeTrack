@@ -19,6 +19,7 @@ class Solution:
             
             stack.append(c)
         return "".join(stack)
+        
     
     #Status: correct
     #Analysis: Time O(n), Space O(n)
