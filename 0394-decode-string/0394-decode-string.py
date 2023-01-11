@@ -19,3 +19,7 @@ class Solution:
             
             stack.append(c)
         return "".join(stack)
+    
+    #Status: correct
+    #Analysis: Time O(n), Space O(n)
+    #ref: 1/11/2023P2:track1-cpGrind75;3QuestionPerDay(perQuestion-x3pomo),perDay-x10pomo;35hoursperWeek;15hrPerTopic+15hrPerTopic+5hrBuffer;Day78/78-,1.generateParenthesesTimed25Mins-x1pomo(12:30-13:00),2.implement-x2pomo(13:0-14:00),3.absorber-x1pomo(14:00-14:30)=x4pomo(12:30-14:30)
