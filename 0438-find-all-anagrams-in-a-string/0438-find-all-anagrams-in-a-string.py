@@ -16,7 +16,6 @@ class Solution:
         for i in range(len(s)-pLen):
             if anag==target:
                 res.append(i)
-            print(i)
             anag=(anag//primes[s[i]])*primes[s[i+pLen]]
         if anag==target:
             res.append(i+1)
