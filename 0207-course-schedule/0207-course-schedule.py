@@ -3,6 +3,7 @@ class Solution:
         map=defaultdict(list)
         for req, pre in prerequisites:
             map[req].append(pre)
+            
         visited=set()   
         def recurse(req):
             if req in visited:
