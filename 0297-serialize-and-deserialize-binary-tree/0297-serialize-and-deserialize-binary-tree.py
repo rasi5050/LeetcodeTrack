@@ -30,7 +30,7 @@ class Codec:
         
         i=0
         root=TreeNode()
-        def recurse(data, root):
+        def recurse(root):
             nonlocal i 
             if data[i]=='_':
                 i+=2
@@ -42,10 +42,10 @@ class Codec:
                     i+=1
                 i+=1
                 root=TreeNode(num)
-                root.left=recurse(data, root.left)
-                root.right=recurse(data, root.right)
+                root.left=recurse(root.left)
+                root.right=recurse(root.right)
             return root
-        return recurse(data, root)            
+        return recurse(root)            
         
 
 # Your Codec object will be instantiated and called as such:
