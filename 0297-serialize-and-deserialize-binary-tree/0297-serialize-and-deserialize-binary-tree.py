@@ -27,7 +27,7 @@ class Codec:
         :type data: str
         :rtype: TreeNode
         """
-        print(data)
+        
         i=0
         root=TreeNode()
         def recurse(data, root):
