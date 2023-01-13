@@ -18,7 +18,6 @@ class Codec:
             if not root: 
                 return '_;'   
             return '' + str(root.val) + ';' + str(recurse(root.left)) + str(recurse(root.right))
-        # print(recurse(root))
         return recurse(root)
         
 
@@ -43,7 +42,6 @@ class Codec:
                     i+=1
                 i+=1
                 root=TreeNode(num)
-                print(root)
                 root.left=recurse(data, root.left)
                 root.right=recurse(data, root.right)
             return root
