@@ -1,28 +1,32 @@
-import sys
-sys.setrecursionlimit(550000)
-
 class Solution:
     def reachingPoints(self, sx: int, sy: int, tx: int, ty: int) -> bool:
-        
         """TLE
-        def recurse(x,y):
-            if (x,y) == (tx,ty):
+        def reach(sx,sy):
+            if (sx,sy)==(tx,ty):
                 return True
-            if x>tx or y>ty:
+            if sx>tx or sy>ty:
                 return False
-            return recurse(x, x+y) or recurse(x+y, y)
-        return recurse(sx,sy)
+            return reach(sx+sy,sy) or reach(sx, sy+sx)
+        return reach(sx,sy)
         """
+        #prune backwards(proccessed from bottom to up)
+        """
+        #cut branch to the second last
+       (x,y)    //from corner2 reach (x,y)
+        \
+          \   <--(x+c*y, y)    //from corner1 reach this corner2; last corner
+         /    <--(x, y+x)
+       /      <--(x, y+ 2*x)
+     /        <--(x, y+ c*x)
+      \
+        \  from (tx,ty) reach this corner1
+       /
+     /
+    (tx,ty)
+    """
+        #cut till last corner
+        while tx>sx and ty>sy:    
+            tx,ty=tx%ty, ty%tx
+        #after this we might be at the (sx,sy) or one straight branch away from (sx,sy)
         
-        while (sx < tx and sy < ty):  
-            #we are trying to reduce tx, ty to sx,sy
-            if (tx<ty):   #we should do (tx, ty-tx)
-                ty%=tx
-            else:
-                tx%=ty
-                
-        if sx==tx and sy<=ty and (ty-sy)%sx==0:
-            return True
-        return sy==ty and sx<=tx and (tx-sx)%sy==0
-                
-            
+        return sy==ty and tx>=sx and (tx-sx)%sy==0 or sx==tx and ty>=sy and (ty-sy)%sx==0
