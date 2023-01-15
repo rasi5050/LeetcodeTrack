@@ -28,5 +28,10 @@ class Solution:
         while tx>sx and ty>sy:    
             tx,ty=tx%ty, ty%tx
         #after this we might be at the (sx,sy) or one straight branch away from (sx,sy)
-        
+        """
+        conditions:
+            reached the target  (sx,sy) ie. sx==tx and sy==ty
+            one straight branch to the left  (sx,sy+k*sx)  ie. sx==tx and (ty-sy)%sx==0
+            one straight branch to the right (sx+k*sy, sy)  ie. sy==ty and (tx-sx)%sy==0
+        """
         return sy==ty and tx>=sx and (tx-sx)%sy==0 or sx==tx and ty>=sy and (ty-sy)%sx==0
