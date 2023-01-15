@@ -8,12 +8,14 @@ class Solution:
             'o': ['i','u'],
             'u': ['a'],
         }
-        @lru_cache(None)
+        memo={}
         def recurse(s,cur):
+            if (s,cur) in memo:
+                return memo[(s,cur)]
             if s==n:
                 return 1
-            count=0
+            memo[(s,cur)]=0
             for mapping in map[cur]:
-                count = (count+recurse(s+1, mapping))%1000000007
-            return count
+                memo[(s,cur)] = (memo[(s,cur)]+recurse(s+1, mapping))%1000000007
+            return memo[(s,cur)]
         return recurse(0,'.')
