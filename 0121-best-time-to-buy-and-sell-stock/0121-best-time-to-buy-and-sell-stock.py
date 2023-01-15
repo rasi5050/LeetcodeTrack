@@ -9,13 +9,12 @@ class Solution:
         """
         
         #two pointer approach
-        minP, maxP=math.inf,-math.inf
+        minPrice=maxPrice=prices[0]
         profit=0
         for price in prices:
-            if price<minP:
-                minP=price
-                maxP=price
-            if price>maxP:
-                maxP=price
-                profit=max(profit, maxP-minP)
+            if price<minPrice:
+                minPrice=maxPrice=price  #reset minPrice and maxPrice
+            if price>maxPrice:
+                maxPrice=price      #for each maxPrice calculate profit
+                profit=max(profit, maxPrice-minPrice)
         return profit
