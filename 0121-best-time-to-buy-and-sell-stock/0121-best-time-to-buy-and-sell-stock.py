@@ -1,23 +1,21 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        #intuition: maintain cur min, max table
+        """TLE
+        profit=0
+        for i in range(len(prices)):
+            for j in range(i+1,len(prices)):
+                profit=max(profit, prices[j]-prices[i])
+        return profit
+        """
         
-        leftMin=[]
-        curMin=prices[0]
+        #two pointer approach
+        minP, maxP=math.inf,-math.inf
+        profit=0
         for price in prices:
-            curMin=min(price, curMin)
-            leftMin.append(curMin)
-        
-        rightMax=[]
-        curMax=prices[-1]
-        for price in reversed(prices):
-            curMax=max(price, curMax)
-            rightMax.append(curMax)
-        rightMax.reverse()
-        maxProfit=0
-        for i,j in zip(rightMax, leftMin):
-            maxProfit=max(maxProfit, i-j)
-        return maxProfit
-            
-         
-    
+            if price<minP:
+                minP=price
+                maxP=price
+            if price>maxP:
+                maxP=price
+                profit=max(profit, maxP-minP)
+        return profit
