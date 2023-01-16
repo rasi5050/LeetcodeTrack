@@ -7,7 +7,7 @@ class Solution:
         count=0
         map=defaultdict(int)
         for j,val in enumerate(time):
-            if (60-val)%60 in map:
+            if (60-val)%60 in map:    #(60-val)%60 , here %60 is given to include the 0 case so that (60-0)%60 returns 0
                 count+=map[(60-val)%60]
             map[val]+=1
         return count
