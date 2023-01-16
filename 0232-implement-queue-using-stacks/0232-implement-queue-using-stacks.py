@@ -43,8 +43,8 @@ class MyQueue:
         return self.back.pop()
 
     def peek(self) -> int:
-        if self.front:
-            return self.front[0]
+        while self.front:
+            self.back.append(self.front.pop())
         return self.back[-1]
 
     def empty(self) -> bool:
