@@ -6,21 +6,11 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        # res=set()
-        # while head:
-        #     if id(head) not in res:
-        #         res.add(id(head))
-        #         head=head.next
-        #     else:
-        #         return True
-        # return False
         
-        #two pointer method
-        #intuition: complete help from leetcode discussion: (https://leetcode.com/problems/linked-list-cycle/discuss/2656867/List-Set-and-Two-Pointer-solutions-simply-explained)
-        slow=fast=head
-        while fast and fast.next:
-            slow=slow.next
-            fast=fast.next.next
-            if slow==fast:
+        visited=set()
+        while head:
+            if id(head) in visited:
                 return True
+            visited.add(id(head))
+            head=head.next
         return False
