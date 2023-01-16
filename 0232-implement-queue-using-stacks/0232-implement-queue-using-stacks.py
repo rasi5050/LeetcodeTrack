@@ -48,7 +48,7 @@ class MyQueue:
         return self.back[-1]
 
     def empty(self) -> bool:
-        return False if (self.front or self.back) else True
+        return (not self.front and not self.back)
 
     #status: correct
     # Analaysis: Time O(n^2); say, if front has n elements, and if we want to pop( queue, then all elements of front has to be flipped to back), Space O(n)
