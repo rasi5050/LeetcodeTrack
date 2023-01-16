@@ -36,5 +36,5 @@ class Solution:
                     visited.add(i)
                     recurse(curr+1)
                     visited.remove(i)    
-        recurse(0)   #dummy value to start
+        recurse(1)   #dummy value to start
         return count[0]
