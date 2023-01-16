@@ -13,9 +13,10 @@ class Solution:
                     perm.append(i)
                     visited.add(i)
                     recurse(i)
+                    visited.remove(perm.pop())
             # print(perm)
-            if perm:
-                visited.remove(perm.pop())
+            # if perm:
+                
         recurse(0)   #dummy value to start
         return count[0]
         
