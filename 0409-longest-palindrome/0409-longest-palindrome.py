@@ -2,10 +2,10 @@ class Solution:
     def longestPalindrome(self, s: str) -> int:
         evenHalfLen=0
         anyOdd=0
-        for count in Counter(s).values():
-            if count%2:
+        for countOfAChar in Counter(s).values():
+            if countOfAChar%2:
                 anyOdd=1
-            evenHalfLen+=(count//2)
+            evenHalfLen+=(countOfAChar//2)
         return (evenHalfLen*2)+anyOdd
     
     #status: correct
