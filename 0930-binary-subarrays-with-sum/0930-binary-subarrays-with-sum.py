@@ -18,7 +18,7 @@ class Solution:
         """        
         #something to do with prefix sums
         
-        
+        """complete help from leetcode solution: approach 2(https://leetcode.com/problems/binary-subarrays-with-sum/solution/)
         P=[0]
         for x in nums: P.append(P[-1]+x)
         print(P)
@@ -29,3 +29,15 @@ class Solution:
             ans+=count[x]
             count[x+goal] += 1
         return ans
+        """
+        
+        #alter
+        occurances=defaultdict(int)
+        occurances[0]=1
+        pre=count=0
+        for n in nums:
+            pre+=n
+            count+=occurances[pre-goal]
+            occurances[pre]+=1
+        return count
+        
