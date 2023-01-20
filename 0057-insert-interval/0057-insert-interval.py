@@ -1,24 +1,25 @@
 class Solution:
     def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+        #insert interval and merge
+        if not intervals: return [newInterval]
         inserted=False
         for i in range(len(intervals)):
-            if intervals[i]>=newInterval:
+            if newInterval[0]<=intervals[i][0]:
                 intervals.insert(i, newInterval)
                 inserted=True
                 break
         if not inserted: intervals.append(newInterval)
-        #then do merge intervals
-        def isOverlap(a, b):
-            return a[0]<=b[1] and a[1]>=b[0]
-        def mergeOverlap(a, b):
-            return [min(a[0], b[0]), max(a[1], b[1])]
+        def checkOverlap(a,b):
+            return b[0]<=a[1] and b[1]>=a[0] or a[1]>=b[0] and a[0]<=b[1]
+
+        def mergeOverlap(a,b):
+            return [min(a[0],b[0]),max(a[1],b[1])]
         
-        res=[]
-        for i in range(len(intervals)-1):
-            if isOverlap(intervals[i], intervals[i+1]):
-                intervals[i+1]=mergeOverlap(intervals[i], intervals[i+1])
+        res=[intervals[0]]
+        for inter in intervals[1:]:
+            a,b=res[-1], inter
+            if checkOverlap(a, b):
+                res[-1]=mergeOverlap(a,b)
             else:
-                res.append(intervals[i])
-        res.append(intervals[-1])
+                res.append(inter)
         return res
-            
