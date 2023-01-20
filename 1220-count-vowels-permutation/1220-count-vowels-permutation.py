@@ -18,6 +18,8 @@ class Solution:
             count=0
             for each in map[c]:
                 count=(count+recurse(i+1, each)) % 1000000007
-            memo[(i,c)]=count
+                memo[(i,c)]=count
             return count
         return recurse(0,'.')
+    
+    #s
