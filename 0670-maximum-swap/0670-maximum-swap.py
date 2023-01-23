@@ -11,7 +11,8 @@ class Solution:
                 
         for j in range(len(num)-1):
             if int(num[j])<int(maxToRight[j][0]):
-                num[j],num[maxToRight[j][1]]    = maxToRight[j][0], num[j]
+                maxToRightVal, MaxToRightIndex = maxToRight[j][0], maxToRight[j][1]
+                num[j],num[MaxToRightIndex]    = maxToRightVal, num[j]
                 return int(''.join(num))
         return int(''.join(num))
                 
