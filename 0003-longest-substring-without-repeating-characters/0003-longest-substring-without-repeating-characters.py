@@ -1,15 +1,22 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        lastIndex={}
-        l=0
-        maxLen=0
-        for r,c in enumerate(s):
-            if c in lastIndex:
-                l=max(lastIndex[c]+1,l)  #the left should be 1more than the last occurance or the current l, whichever is greater
-            maxLen=max(maxLen, r-l+1)
-            lastIndex[c]=r
-        return maxLen
+        counter=Counter('')
+        curMax=0
+        #two pointers:
+        l=r=0
+        for _ in range(len(s)):
+            counter[s[r]]+=1
+            r+=1
+            while counter.most_common() and counter.most_common()[0][1]>1:
+                counter[s[l]]-=1
+                if counter[s[l]]==0: del counter[s[l]]
+                l+=1
+            if counter.most_common() and counter.most_common()[0][1]==1:
+                curMax=max(curMax, r-l)
+            # print(counter)
+        return curMax
     
-    #status: correct; help(https://leetcode.com/problems/longest-substring-without-repeating-characters/solution/); approach 3:sliding window optimized
+    
+    #status: correct; Rasi's solution
     #Analysis: Time O(n), Space O(n)
-    #ref: 1/23/2023P2:track1-cpGrind75;3QuestionPerDay(perQuestion-x3pomo),perDay-x10pomo;35hoursperWeek;15hrPerTopic+15hrPerTopic+5hrBuffer;Day90/90Blind26/75,2q/dayDay9/10;1.3SumTImed25Mins-x1pomo(12:00-12:30),2.BinaryTreeLevelOrderTraversalTimed25Mins-x1pomo(12:30-13:00),3.closeGraphTimed25Mins-x1pomo(13:00-13:30),4.implement-x1pomo(13:30-14:00)-x4pomo(12:00-14:00)
+    #ref: 1/23/2023P2:track1-cpGrind75;3QuestionPerDay(perQuestion-x3pomo),perDay-x10pomo;35hoursperWeek;15hrPerTopic+15hrPerTopic+5hrBuffer;Day90/90Blind26/75,2q/dayDay9/10;P1:doTiktok:SWE OA(DevOps)- 2023 Summer (BS/MS)Day2/5-3q/day+searchOAQuestionsInReddit/csMajor,1.designAStackWithIncrementOperationTimed25Mins-x1pomo(6:00-6:30),2.implement-x1pomo(6:30-7:00),3.reformatDateTimed25Mins-x1pomo(7:00-7:30),4.implement-x1pomo(7:30-8:00),5.maximumSwapTimed25Mins-x1pomo(8:00-8:30),6.implement-x1pomo(8:30-9:00),7.01MatrixTimed25Mins-x1pomo(9:00-9:30),8.implement-x1pomo(9:30-10:00),9.longestSubstringWithoutRepeatingCharactersTimed25Mins-x1pomo(10:00-10:30),10.implement-x1pomo(10:30-11:00)=x12pomo(5:30-11:30)alter-x10pomo(6:00-11:00)
