@@ -16,13 +16,12 @@ class Solution:
                 if not(x<0 or y<0 or x>len(mat)-1 or y>len(mat[0])-1 or (x,y) in visited):
                     if mat[x][y]==1:
                         res[x][y]=level
-                        # continue
+                        # continue  #earlier thought, it should end when it sees a 1, but found that it should not because there could be 1 which can be only reached through only ones
                     visited.add((x,y))
                     next.append((x-1,y))
                     next.append((x+1,y))
                     next.append((x,y-1))
                     next.append((x,y+1))
-            
             frontier=next
             level+=1
         return res
