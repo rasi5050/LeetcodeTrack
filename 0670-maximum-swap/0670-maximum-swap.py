@@ -7,7 +7,6 @@ class Solution:
             if int(num[i+1])>rightMax[i+1][0]:
                 rightMax[i]=(int(num[i+1]),i+1)
             else: rightMax[i]=rightMax[i+1]
-        print(rightMax)
         
         for j in range(len(num)-1):
             if num[j]=='9' or int(num[j])>=rightMax[j][0]:
