@@ -13,7 +13,5 @@ class Solution:
             if num[j]=='9' or int(num[j])>=rightMax[j][0]:
                 continue
             else:
-                print(j)
                 return int(num[:j] + str(rightMax[j][0]) + num[j+1:rightMax[j][1]] + num[j] + num[rightMax[j][1]+1:])
         return int(num)
-        # return 1
