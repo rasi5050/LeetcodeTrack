@@ -14,7 +14,7 @@ class Solution:
                 else:
                     res.append([nums[index], nums[l], nums[r]])
                     l+=1
-                    while nums[l]==nums[l-1] and l<r:
+                    while nums[l]==nums[l-1] and l<r:  #skip duplicates
                         l+=1
                 
             
