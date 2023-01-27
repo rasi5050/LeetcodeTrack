@@ -1,5 +1,6 @@
 class ProductOfNumbers:
     #do naive algorithm
+    """working code; commented for alter    
     def __init__(self):
         self.stream=[]
         self.prefixProd=[]
@@ -22,7 +23,7 @@ class ProductOfNumbers:
             return(prod(self.stream[len(self.stream)-k:]))
         return self.prefixProd[-1]//self.prefixProd[-(k+1)]   #if values other than zeroes
             
-            
+        """
         
 
 
@@ -30,3 +31,15 @@ class ProductOfNumbers:
 # obj = ProductOfNumbers()
 # obj.add(num)
 # param_2 = obj.getProduct(k)
+    def __init__(self):
+        self.prefixProd=[1]     #1 is the multiplicative identity
+    #do as prefix prod
+    def add(self, num: int) -> None:
+        if num==0:
+            self.prefixProd=[1]
+        else:
+            self.prefixProd.append(self.prefixProd[-1]*num)
+
+    def getProduct(self, k: int) -> int:
+        if k>=len(self.prefixProd): return 0
+        return self.prefixProd[-1]//self.prefixProd[-(k+1)]
