@@ -29,7 +29,7 @@ class Solution:
             return [1+d for d in leftDistances+rightDistances]
         recurse(root)
         return count
-    
+    #why this is working: this is finding all possible distances to the all possible left and right child combinations; the length of the returning array will also be the number of leaf nodes; hence representing the height of the each leaf node
     #status: correct; help(https://www.youtube.com/watch?v=3JU0v2kuYGg&t=552s)
     #Analysis: Time O(N^2); nested for loop inside recursion
     #Space O(N)
