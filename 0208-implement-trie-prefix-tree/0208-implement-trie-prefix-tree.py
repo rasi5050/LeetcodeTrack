@@ -17,7 +17,6 @@ class Trie:
                 new_node=Node()
                 node.children[c]=new_node
                 node=node.children[c]
-            # print(node)
         node.isWord=True
 
     def search(self, word: str) -> bool:
