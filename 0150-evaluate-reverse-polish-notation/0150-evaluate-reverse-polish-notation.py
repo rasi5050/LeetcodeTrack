@@ -12,7 +12,6 @@ class Solution:
                 stack.append(res)
             else:
                 stack.append(int(token))
-            # print(stack)
         return stack[-1]
     
     #status: correct
