@@ -18,10 +18,8 @@ class Solution:
                     l=mid+1
                 else:
                     r=mid-1
-        # print(0, pivot-1, pivot, len(nums)-1)
         b1=binarySearch(0,pivot-1)
         b2=binarySearch(pivot, len(nums)-1)
-        # print(b)
         if b1!=None: return b1
         if b2!=None: return b2
         return -1
