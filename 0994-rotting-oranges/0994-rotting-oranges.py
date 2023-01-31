@@ -12,7 +12,7 @@ class Solution:
         if numberOfFreshApples==0: return 0
         numberOfFreshApples+=len(frontier)
         numberOfDays=0
-        print(numberOfFreshApples)
+        # print(numberOfFreshApples)
         firstFlag=True
         while frontier:
             next=[]
@@ -20,7 +20,7 @@ class Solution:
                 i,j=each
                 if (not(i<0 or j<0 or i>len(grid)-1 or j>len(grid[0])-1) and grid[i][j]==1) or firstFlag:
                     grid[i][j]=2
-                    print(i,j, 'numberOfDays: ',numberOfDays )
+                    # print(i,j, 'numberOfDays: ',numberOfDays )
                     numberOfFreshApples-=1
                     next.append((i-1, j))
                     next.append((i+1, j))
@@ -29,5 +29,5 @@ class Solution:
             frontier=next
             numberOfDays+=1
             firstFlag=False
-        print(numberOfDays, numberOfFreshApples)
+        # print(numberOfDays, numberOfFreshApples)
         return numberOfDays-2 if numberOfFreshApples==0 else -1
