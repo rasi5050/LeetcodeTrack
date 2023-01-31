@@ -1,6 +1,5 @@
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        # if len(nums)==1: return 0 if nums[0]==target else -1
         #find pivot
         pivot=0
         for i in range(len(nums)-1):
@@ -18,8 +17,8 @@ class Solution:
                     l=mid+1
                 else:
                     r=mid-1
-        b1=binarySearch(0,pivot-1)
-        if b1!=None: return b1
+        b1=binarySearch(0,pivot-1)      
+        if b1!=None: return b1          #tripped of here on last try on 1/31/2023 because zero as index will mess up here 
         b2=binarySearch(pivot, len(nums)-1)
         if b2!=None: return b2
         return -1
