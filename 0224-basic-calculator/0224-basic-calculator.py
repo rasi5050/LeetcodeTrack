@@ -1,28 +1,25 @@
 class Solution:
     def calculate(self, s: str) -> int:
         currNum=0
+        res=0
         sign=1
-        stack=[0]      #stack[-1] would act as the previous num
+        stack=[]
         for i,c in enumerate(s):
             if c.isdigit():
                 currNum=currNum*10 + int(c)
-            if c=='+':
-                stack[-1]+=(currNum*sign)
-                sign=1
+            elif c in {'+','-'}:
+                res+=(sign*currNum)
+                sign=1 if c=='+' else -1
                 currNum=0
-            elif c=='-':
-                stack[-1]+=(currNum*sign)
-                sign=-1
-                currNum=0
-            elif c=='(':
+            elif c=='(':        #record the current state before going into parentheses, (res, sign) and reset both
+                stack.append(res)
                 stack.append(sign)
-                stack.append(0)
                 sign=1
-                currNum=0
+                res=0
             elif c==')':
-                lastNum = (stack.pop() + currNum*sign)*stack.pop()
-                stack[-1]+=lastNum
-                sign=1
-                currNum=0
-        return stack[-1]+currNum*sign
+                res+=(sign*currNum) #the last unproccessed currNum;because we were processing it when we found a operator, in this case we have to process it when we see ')'
             
+                res*=stack.pop()
+                res+=stack.pop()
+                currNum=0
+        return res+sign*currNum
