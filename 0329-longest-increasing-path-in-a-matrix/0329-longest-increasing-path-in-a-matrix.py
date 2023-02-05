@@ -28,7 +28,7 @@ class Solution:
                 dfs(i,j)
         return maxLen
         """
-        
+        """
         #adding memoization to dfs
         visited=set()
         @cache
@@ -47,8 +47,26 @@ class Solution:
             for j in range(len(matrix[0])):
                 maxLen=max(maxLen, dfs(i,j))
         return maxLen
+        """
         
-
+    
+    
+    #reducing lines
+        #visited set is not required because it will be prevented by the increasing chain that higher number will not be able to enter the chain from higher value to lower value
+        @cache
+        def dfs(x,y):
+                up=down=left=right=0
+                if not(x-1)<0                and matrix[x-1][y]>matrix[x][y]: up=dfs(x-1,y)
+                if not(x+1)>len(matrix)-1    and matrix[x+1][y]>matrix[x][y]: down=dfs(x+1,y)
+                if not(y-1)<0                and matrix[x][y-1]>matrix[x][y]: left=dfs(x,y-1)
+                if not(y+1)>len(matrix[0])-1 and matrix[x][y+1]>matrix[x][y]: right=dfs(x,y+1)
+                return 1+max(up, down, left, right)
+        maxLen=0
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                maxLen=max(maxLen, dfs(i,j))
+        return maxLen
+    
         
 #         #do DP
 #         #extra rows and columns on top, bottom, left, right for base cases
