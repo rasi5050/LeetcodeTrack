@@ -30,18 +30,18 @@ class Solution:
         """
         
         #adding memoization to dfs
-        visited=set()
+        # visited=set()
         @cache
         def dfs(x,y):
-            if (x,y) not in visited:
-                visited.add((x,y))
-                up=down=left=right=0
-                if not(x-1)<0                and matrix[x-1][y]>matrix[x][y]: up=dfs(x-1,y)
-                if not(x+1)>len(matrix)-1    and matrix[x+1][y]>matrix[x][y]: down=dfs(x+1,y)
-                if not(y-1)<0                and matrix[x][y-1]>matrix[x][y]: left=dfs(x,y-1)
-                if not(y+1)>len(matrix[0])-1 and matrix[x][y+1]>matrix[x][y]: right=dfs(x,y+1)
-                visited.remove((x,y))
-                return 1+max(up, down, left, right)
+            # if (x,y) not in visited:
+                # visited.add((x,y))
+            up=down=left=right=0
+            if not(x-1)<0                and matrix[x-1][y]>matrix[x][y]: up=dfs(x-1,y)
+            if not(x+1)>len(matrix)-1    and matrix[x+1][y]>matrix[x][y]: down=dfs(x+1,y)
+            if not(y-1)<0                and matrix[x][y-1]>matrix[x][y]: left=dfs(x,y-1)
+            if not(y+1)>len(matrix[0])-1 and matrix[x][y+1]>matrix[x][y]: right=dfs(x,y+1)
+            # visited.remove((x,y))
+            return 1+max(up, down, left, right)
         maxLen=0
         for i in range(len(matrix)):
             for j in range(len(matrix[0])):
