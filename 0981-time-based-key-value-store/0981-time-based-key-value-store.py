@@ -58,7 +58,7 @@ class TimeMap:
                 possibleLeftValue=self.map[key][min(l,len(self.map[key])-1)][1]
                 possibleRightValue=self.map[key][max(r,0)][1]
                 
-            if possibleLeftTimestamp<timestamp: return possibleLeftValue
+            # if possibleLeftTimestamp<timestamp: return possibleLeftValue
             if possibleRightTimestamp<timestamp: return possibleRightValue
             return ""
         
