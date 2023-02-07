@@ -40,6 +40,7 @@ class TimeMap:
     def get(self, key: str, timestamp: int) -> str:
         # print(self.map, key, timestamp)
         if key not in self.map: return ""
+        elif timestamp < self.map[key][0][0]: return ""          #all the values in the list are higher than the current timestamp
         else:
             # do binary search
             l,r=0,len(self.map[key])-1
@@ -53,12 +54,11 @@ class TimeMap:
                     l=mid+1
                 elif timestamp<currTimestamp:
                     r=mid-1
-                possibleLeftTimestamp=self.map[key][min(l,len(self.map[key])-1)][0]
-                possibleRightTimestamp=self.map[key][max(r,0)][0]
-                possibleLeftValue=self.map[key][min(l,len(self.map[key])-1)][1]
-                possibleRightValue=self.map[key][max(r,0)][1]
                 
-            # if possibleLeftTimestamp<timestamp: return possibleLeftValue
+                #left value is not required because if not target, we want a value which is less than target, so right value will be the one who is trying to match the target from higher value to lower value, so when the loop breaks right value will be the highest value near to target
+            possibleRightTimestamp=self.map[key][max(r,0)][0]
+            possibleRightValue=self.map[key][max(r,0)][1]
+                
             if possibleRightTimestamp<timestamp: return possibleRightValue
             return ""
         
