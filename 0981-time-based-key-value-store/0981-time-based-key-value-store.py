@@ -62,5 +62,10 @@ class TimeMap:
             if possibleRightTimestamp<timestamp: return possibleRightValue
             return ""
         
+     #status: correct; took 4hours with the help(https://leetcode.com/problems/time-based-key-value-store/solution/)
+     #Analysis: Time O(N*LogM), Space O(N)   
+        #ref: 2/7/2023P2:track1-cpGrind75;Day103/104;doLeetcodeBlind75-3q/day-16/45Q:completeOn2/15/2023-Day11/15,collateQuestionPatternIntoCategoriesAndTemplaye-Day2/3:(addWordDescriptionOnceProblemIsSolved)1.(timeBasedKeyValueStoreTimed25Mins)-x1pomo(6:00-6:30),2.implement-x1pomo(6:30-7:00),3.(accountsMergeTimed25Mins)-x1pomo(7:00-7:30),4.implement-x1pomo(7:30-8:00),5.implement-x1pomo(8:00-8:30),6.sortColorsTimed25Mins-x1pomo(8:30-9:00),7.implement-x1pomo(9:00-9:30),8.wordBreakTimed25Mins-x1pomo(9:30-10:00),9.applyInternships(1.https://ups-2022.runmytests.com/job/atlanta/finance-and-accounting-analytics-summer-2023-intern/1187/43530455504,2.https://ups-2022.runmytests.com/job/parsippany/coop-engineering-major-post-grad-hybrid-nj/1187/43537660080,3.https://ups-2022.runmytests.com/job/atlanta/communications-analytics-summer-2023-intern/1187/43537624848,4.https://ups-2022.runmytests.com/job/lutherville-timonium/coop-engineering-major-junior/1187/43537645072,5.https://ups-2022.runmytests.com/job/lutherville-timonium/coop-engineering-major-junior/1187/43537645088)-x2pomo(10:00-11:00)-x12pomo(5:30-11:30)alter-x10pomo(6:00-11:00)
+
+        
         
         
