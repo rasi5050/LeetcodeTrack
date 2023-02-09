@@ -50,6 +50,7 @@ class Solution:
                 if dp[i]:
                     break
         return dp[0]
+    #synopsis: for each index, word can be breaked if starting index i if any of the word in worddict can be formed. then it dependes on whether there is a word break where the previous word ended, that is captured by dp table
     #status: correct; didnot understand ; help(https://www.youtube.com/watch?v=Sx9NNgInc3A&t=929s)
     #Analysis: Time O(n^2), Space O(n)
     #ref:2/9/2023P2:track1-cpGrind75;Day105/106;doLeetcodeBlind75-3q/day-18/45Q:completeOn2/15/2023-Day13/15,collateQuestionPatternIntoCategoriesAndTemplate-Day4/5:(addWordDescriptionOnceProblemIsSolvedDay3/4),1.sortColorsTimed25Mins-x1pomo(6:00-6:30),2.implement(addDescriptionAfterSolvingProblem)-x1pomo(6:30-7:00),3.wordBreakTimed25Mins-x1pomo(7:00-7:30),4.implement-x1pomo(7:30-8:00),5.partitionEqualSubsetSumTimed25Mins-x1pomo(8:00-8:30),6.implement-x1pomo(8:30-9:00),7.absorber-x2pomo(9:00-10:00),8.applyInternships(0.(P2:searchInternshipInTiktokWebsite(https://careers.tiktok.com/position/7138620933615733006/detail);1.Please state your availability clearly in your resume (Start date, End date).(1. May 22, 2023 to August 11, 2023),2.applyOtherPositionIfAllowed,3.addDockerExperienceToResume)
