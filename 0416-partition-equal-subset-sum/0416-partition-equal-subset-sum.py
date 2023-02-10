@@ -35,8 +35,7 @@ class Solution:
                 return True
             if curSum<0 or i>=len(nums):
                 return False
-            return dfs(i+1,curSum) or dfs(i+1,curSum-nums[i])
-            # return dfs(i+1,curSum-nums[i]) or dfs(i+1,curSum)
+            return dfs(i+1,curSum-nums[i]) or dfs(i+1,curSum)
         
         return dfs(0,halfSum)
 
