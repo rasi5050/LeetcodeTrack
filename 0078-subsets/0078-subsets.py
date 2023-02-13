@@ -7,8 +7,9 @@ class Solution:
                 res.append(comb.copy())
                 return
             
-            dfs(i+1, comb)
             dfs(i+1, comb+[nums[i]])
+            dfs(i+1, comb)
+            
             
         dfs(0,[])
         return res
