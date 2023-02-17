@@ -26,6 +26,12 @@ class Solution:
             count+=dfs(i,j-1)
             return count
         return dfs(m-1,n-1)
+        #second approach is faster because less pruning of trees
+    
+        #status: correct
+        #Analysis: Time O(2^(max(m,n))), Space O(2^(max(m,n)))
+        #ref: 2/17/2023P2:track1-cpGrind75;Day111/112;doLeetcodeBlind75-3q/day-26/45Q:completeOn2/15/2023-Day19/15,collateQuestionPatternIntoCategoriesAndTemplate-Day9/5:(addWordDescriptionOnceProblemIsSolvedDay6/4),1.uniquePathsTimed25Mins-x1pomo(6:00-6:30),2.implement-x1pomo(6:30-7:00),3.constructABinaryTreeFromPreorderAndInorderTraversalTimed25Mins-x1pomo(7:00-7:30),4.implement-x2pomo(7:30-8:30),5.containerWithMostWaterTimed25Mins-x1pomo(8:30-9:00),6.implement-x1pomo(9:00-9:30),7.applyInternship-x6SdeFromGitHubPage-x2pomo(9:30-10:30),8.applyInternship-x3DevOpsFromLinkedIn-x1pomo(10:30-11:00)             -x12pomo(5:30-11:30)alter-x10pomo(6:00-11:00)
+
         
         
         
