@@ -21,10 +21,8 @@ class Solution:
                 return 0
             if i==0 and j==0:
                 return 1
-            count=0
-            count+=dfs(i-1,j)
-            count+=dfs(i,j-1)
-            return count
+            return dfs(i-1,j)+dfs(i,j-1)
+               
         return dfs(m-1,n-1)
         #second approach is faster because less pruning of trees
     
