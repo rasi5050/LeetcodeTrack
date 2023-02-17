@@ -42,6 +42,6 @@ class Solution:
         for i in range(m):
             for j in range(n):
                 dp[i][j]=dp[i-1 if (i-1)>=0 else i][j]+dp[i][j-1 if (j-1)>=0 else j]
-        print(dp)
+    
         return int(dp[m-1][n-1])
         
