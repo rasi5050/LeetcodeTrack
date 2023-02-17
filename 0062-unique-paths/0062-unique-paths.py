@@ -38,7 +38,7 @@ class Solution:
         #number of paths depends of the smaller grid
         
         dp=[[0]*(n) for _ in range(m)]
-        dp[0][0]=0.5
+        dp[0][0]=0.5        #ideally the base case should be 1, but since i have avoided the extra row and the initial row defaults its itself 0.5 prevents the double count in the initial case
         for i in range(m):
             for j in range(n):
                 dp[i][j]=dp[i-1 if (i-1)>=0 else i][j]+dp[i][j-1 if (j-1)>=0 else j]
